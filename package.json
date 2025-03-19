@@ -1,7 +1,7 @@
 {
   "name": "graph_scenario",
   "version": "0.1.0",
-  "homepage": "https://VladislavSerKir.github.io/graph_scenario",
+  "homepage": "https://graph-scenario.vercel.app/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.2",
