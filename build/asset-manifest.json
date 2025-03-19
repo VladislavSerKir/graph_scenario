@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/graph_scenario/static/css/main.cb6b4087.css",
+    "main.js": "/graph_scenario/static/js/main.3fd04a6a.js",
+    "index.html": "/graph_scenario/index.html",
+    "main.cb6b4087.css.map": "/graph_scenario/static/css/main.cb6b4087.css.map",
+    "main.3fd04a6a.js.map": "/graph_scenario/static/js/main.3fd04a6a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cb6b4087.css",
+    "static/js/main.3fd04a6a.js"
+  ]
+}
