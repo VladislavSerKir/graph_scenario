@@ -67,17 +67,15 @@ export const ActionsEditor = () => {
       <div className={`result-section__item ui items`}>
         <div className="item">
           <div className={`result-section__input`}>
-            <a href="/" className={`header`}>
-              {currAction ? (
-                <p className={`result-section__item-title`}>
-                  {currAction?.name}
-                </p>
-              ) : (
-                <p className={`result-section__item-title`}>
-                  Кликните на любое действие
-                </p>
-              )}
-            </a>
+            {currAction ? (
+              <p className={`result-section__item-title`}>
+                Текущее действие: {currAction?.name}
+              </p>
+            ) : (
+              <p className={`result-section__item-title`}>
+                Кликните на любое действие (Овал)
+              </p>
+            )}
             <input
               className={`result-section__input prompt`}
               name="name"
@@ -91,10 +89,13 @@ export const ActionsEditor = () => {
               onChange={handleSelectChange}
               defaultValue={inputData.to_scenario}
               name="to_scenario"
-              label={"Переход на сценарий"}
+              label={"Переход на сценарий:"}
               toTop
             />
-            <button type="submit"> Изменить</button>
+            <button type="submit" className="button">
+              {" "}
+              Изменить
+            </button>
           </div>
         </div>
       </div>

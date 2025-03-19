@@ -56,11 +56,9 @@ export const AddScenario = () => {
       <div className={`result-section__item ui items`}>
         <div className="item">
           <div className={`result-section__input`}>
-            <a href="/" className={`header`}>
-              <p className={`result-section__item-title`}>
-                Добавить новый сценарий
-              </p>
-            </a>
+            <p className={`result-section__item-title`}>
+              Добавить новый сценарий
+            </p>
             <input
               className={`result-section__input prompt`}
               name="name"
@@ -74,10 +72,13 @@ export const AddScenario = () => {
               onChange={handleMultiSelectChange}
               defaultValue={inputData.actions}
               name="actions"
-              label={"Возможные действия"}
+              label={"Возможные действия:"}
               toTop
             />
-            <button type="submit"> Добавить</button>
+            <button type="submit" className="button">
+              {" "}
+              Добавить
+            </button>
           </div>
         </div>
       </div>

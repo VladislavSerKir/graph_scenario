@@ -69,17 +69,15 @@ export const ScenarioEditor = () => {
       <div className={`result-section__item ui items`}>
         <div className="item">
           <div className={`result-section__input`}>
-            <a href="/" className={`header`}>
-              {currScenario ? (
-                <p className={`result-section__item-title`}>
-                  {currScenario?.name}
-                </p>
-              ) : (
-                <p className={`result-section__item-title`}>
-                  Кликните на любой из сценариев
-                </p>
-              )}
-            </a>
+            {currScenario ? (
+              <p className={`result-section__item-title`}>
+                Текущий сценарий: {currScenario?.name}
+              </p>
+            ) : (
+              <p className={`result-section__item-title`}>
+                Кликните на любой из сценариев (прямоугольник)
+              </p>
+            )}
             <input
               className={`result-section__input prompt`}
               name="name"
@@ -93,10 +91,13 @@ export const ScenarioEditor = () => {
               onChange={handleMultiSelectChange}
               defaultValue={inputData.actions}
               name="actions"
-              label={"Возможные действия"}
+              label={"Возможные действия:"}
               toTop
             />
-            <button type="submit"> Изменить</button>
+            <button className="button" type="submit">
+              {" "}
+              Изменить
+            </button>
           </div>
         </div>
       </div>

@@ -65,11 +65,9 @@ export const AddAction = () => {
       <div className={`result-section__item ui items`}>
         <div className="item">
           <div className={`result-section__input`}>
-            <a href="/" className={`header`}>
-              <p className={`result-section__item-title`}>
-                Добавить новое действие
-              </p>
-            </a>
+            <p className={`result-section__item-title`}>
+              Добавить новое действие
+            </p>
             <input
               className={`result-section__input prompt`}
               name="name"
@@ -83,10 +81,12 @@ export const AddAction = () => {
               onChange={handleSelectChange}
               defaultValue={inputData.to_scenario}
               name="to_scenario"
-              label={"Переход на сценарий"}
+              label={"Переход на сценарий:"}
               toTop
             />
-            <button type="submit">Добавить</button>
+            <button type="submit" className="button">
+              Добавить
+            </button>
           </div>
         </div>
       </div>
