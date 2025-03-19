@@ -20,3 +20,8 @@ export interface IGraphData {
   currScenario: IScenario | null | undefined;
   currAction: IAction | null | undefined;
 }
+
+export interface IInputData {
+  name: string;
+  to_scenario: any;
+}

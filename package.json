@@ -1,7 +1,7 @@
 {
-  "name": "anekdotes-app",
+  "name": "graph_scenario",
   "version": "0.1.0",
-  "homepage": "https://VladislavSerKir.github.io/anekdotes-app",
+  "homepage": "https://VladislavSerKir.github.io/graph_scenario",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.2",
@@ -34,7 +34,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build -b master",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

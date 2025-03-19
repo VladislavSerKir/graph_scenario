@@ -2,17 +2,17 @@ import React, { FC, useCallback } from "react";
 import Select from "react-select";
 import { IGenericObject } from "../../types/dataType";
 
-interface IMultiSelectFieldProps {
+interface ISelectFieldProps {
   label: string;
   name: string;
   onChange: Function;
-  defaultValue: IGenericObject;
+  defaultValue: string;
   options: IGenericObject;
   isFixed?: boolean;
   toTop?: boolean;
 }
 
-const MultiSelectField: FC<IMultiSelectFieldProps> = ({
+const SelectField: FC<ISelectFieldProps> = ({
   label,
   options,
   onChange,
@@ -24,7 +24,7 @@ const MultiSelectField: FC<IMultiSelectFieldProps> = ({
     !Array.isArray(options) && typeof options === "object"
       ? Object.keys(options).map((optionName) => ({
           label: options[optionName].name,
-          value: options[optionName].action_id,
+          value: options[optionName].scenario_id,
         }))
       : options;
 
@@ -40,19 +40,18 @@ const MultiSelectField: FC<IMultiSelectFieldProps> = ({
     <div>
       <label className="multi-select-field__label-select">{label}</label>
       <Select
-        isMulti
-        closeMenuOnSelect={false}
+        closeMenuOnSelect={true}
         options={optionsArray}
         className={getInputClasses()}
+        defaultValue={optionsArray[0]}
         classNamePrefix="react-select"
         onChange={handleChange}
         name={name}
         value={defaultValue}
-        defaultValue={defaultValue}
         menuPlacement={toTop ? "top" : "bottom"}
       />
     </div>
   );
 };
 
-export default MultiSelectField;
+export default SelectField;

@@ -1,12 +1,28 @@
 import { useState } from "react";
 import { useTypedDispatch, useTypedSelector } from "../../types/types";
 import { addAction } from "../../services/dataReducer/dataReducer";
+import SelectField from "../select-field/select-field";
+import { IGenericObject, IInputData } from "../../types/dataType";
 
 export const AddAction = () => {
   const dispatch = useTypedDispatch();
   const currAction = useTypedSelector((store) => store.data.currAction);
+  const scenarios = useTypedSelector((store) => store.data.scenarios);
 
-  const [inputData, setInputData] = useState({
+  let scenariosList = scenarios.map((scenario) => ({
+    label: scenario.name,
+    value: scenario.scenario_id,
+  }));
+
+  scenariosList = [
+    {
+      label: "Без перехода",
+      value: "",
+    },
+    ...scenariosList,
+  ];
+
+  const [inputData, setInputData] = useState<IInputData>({
     name: currAction?.name || "",
     to_scenario: "",
   });
@@ -24,13 +40,20 @@ export const AddAction = () => {
     const formattedData = {
       ...inputData,
       action_id: String(Math.floor(Math.random() * 100)),
-      to_scenario: "",
+      to_scenario: inputData.to_scenario.value,
     };
     dispatch(addAction({ formattedData }));
     setInputData({
       name: "",
       to_scenario: "",
     });
+  };
+
+  const handleSelectChange = (selectedOptions: IGenericObject) => {
+    setInputData((prevState) => ({
+      ...prevState,
+      to_scenario: selectedOptions.value,
+    }));
   };
 
   return (
@@ -55,7 +78,15 @@ export const AddAction = () => {
               value={inputData.name}
               onChange={handleActionChange}
             />
-            <button type="submit"> Добавить</button>
+            <SelectField
+              options={scenariosList}
+              onChange={handleSelectChange}
+              defaultValue={inputData.to_scenario}
+              name="to_scenario"
+              label={"Переход на сценарий"}
+              toTop
+            />
+            <button type="submit">Добавить</button>
           </div>
         </div>
       </div>
