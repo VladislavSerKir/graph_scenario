@@ -66,20 +66,20 @@ export const ScenarioEditor = () => {
       name="scenario"
       onSubmit={handleSubmitScenario}
     >
-      <div className={`result-section__item ui items`}>
+      <div className={`scenario-editor__item ui items`}>
         <div className="item">
-          <div className={`result-section__input`}>
+          <div className={`scenario-editor__input`}>
             {currScenario ? (
-              <p className={`result-section__item-title`}>
+              <p className={`scenario-editor__item-title`}>
                 Текущий сценарий: {currScenario?.name}
               </p>
             ) : (
-              <p className={`result-section__item-title`}>
+              <p className={`scenario-editor__item-title`}>
                 Кликните на любой из сценариев (прямоугольник)
               </p>
             )}
             <input
-              className={`result-section__input prompt`}
+              className={`scenario-editor__input prompt`}
               name="name"
               type="text"
               placeholder="Введите название сценария"

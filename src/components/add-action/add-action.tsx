@@ -62,14 +62,14 @@ export const AddAction = () => {
       name="add-action"
       onSubmit={handleSubmitAddAction}
     >
-      <div className={`result-section__item ui items`}>
+      <div className={`scenario-editor__item ui items`}>
         <div className="item">
-          <div className={`result-section__input`}>
-            <p className={`result-section__item-title`}>
+          <div className={`scenario-editor__input`}>
+            <p className={`scenario-editor__item-title`}>
               Добавить новое действие
             </p>
             <input
-              className={`result-section__input prompt`}
+              className={`scenario-editor__input prompt`}
               name="name"
               type="text"
               placeholder="Введите название действия"

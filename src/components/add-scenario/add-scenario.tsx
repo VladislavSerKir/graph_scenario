@@ -53,14 +53,14 @@ export const AddScenario = () => {
       name="add-scenario"
       onSubmit={handleSubmitScenario}
     >
-      <div className={`result-section__item ui items`}>
+      <div className={`scenario-editor__item ui items`}>
         <div className="item">
-          <div className={`result-section__input`}>
-            <p className={`result-section__item-title`}>
+          <div className={`scenario-editor__input`}>
+            <p className={`scenario-editor__item-title`}>
               Добавить новый сценарий
             </p>
             <input
-              className={`result-section__input prompt`}
+              className={`scenario-editor__input prompt`}
               name="name"
               type="text"
               placeholder="Введите название сценария"

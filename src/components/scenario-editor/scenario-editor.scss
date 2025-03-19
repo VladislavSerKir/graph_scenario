@@ -1,7 +1,7 @@
 @use "../../styles/mixins/adaptivity.scss";
 @import "../../styles/mixins/adaptivity.scss";
 
-.result-section {
+.scenario-editor {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px 0;
@@ -20,19 +20,6 @@
 
   @include adaptivity(600px) {
     padding: 20px 25px;
-  }
-
-  &__title {
-    display: flex;
-    justify-content: center;
-    background-image: linear-gradient(
-      146deg,
-      rgba(221, 26, 253, 1) 6%,
-      rgba(36, 240, 249, 1) 64%
-    );
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
   }
 
   &__item {
@@ -77,22 +64,7 @@
       color: transparent;
       -webkit-background-clip: text;
       background-clip: text;
-
-      &_thyme_dark {
-        background-image: linear-gradient(
-          52deg,
-          rgb(235, 253, 26) 0%,
-          rgb(249, 104, 36) 100%
-        );
-      }
     }
-  }
-
-  &__item-image {
-    background-size: cover;
-    width: 150px;
-    height: 150px;
-    border-radius: 10px;
   }
 }
 
@@ -113,32 +85,6 @@
   &:hover {
     cursor: pointer;
     opacity: 0.7;
-  }
-}
-
-.description {
-  &_thyme_dark {
-    color: white;
-  }
-}
-
-.ui.items > .item > .image > img {
-  border-radius: 10px;
-}
-
-.ui.items:not(.unstackable) > .item {
-  @media only screen and (max-width: 767px) {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    margin: 0;
-  }
-}
-
-.ui.items > .item > .content > .description {
-  &_thyme_dark {
-    color: white;
   }
 }
 
